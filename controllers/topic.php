@@ -5,12 +5,22 @@ class Topic extends CI_Controller {
 
 	public function index()
 	{
+        $this->load->view('head');
 		$this->load->view('topic');
+		$this->load->view('footer');
 	}
 
-    public function get($id){
-        echo '토픽'.$id;
+
+    function main($id){
+        $this->load->view('head');
+        $data = array('id'=>$id);
+        $this->load->view('main', $data);
+        $this->load->view('footer');
+
     }
+    // public function get($id){
+    //     echo '토픽'.$id;
+    // }
 }
 
 
